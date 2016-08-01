@@ -35,7 +35,6 @@ end
 delete '/post/:id' do
   post = Post.find(params[:id])
   post.destroy
-  @delete = true 
 
-  erb :show
+  redirect to ('/show')
 end

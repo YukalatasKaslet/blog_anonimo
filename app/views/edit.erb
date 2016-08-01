@@ -9,3 +9,11 @@
       <input name="post[tag]" type="tag"><br>
      <input type="submit" value="Postea!">
    </form>
+
+
+  <div>
+    <form action="/post/<%= @post.id %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Borrar!">
+    </form>
+  </div>

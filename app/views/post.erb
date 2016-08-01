@@ -1,10 +1,18 @@
 <h1> Tu post!</h1>
 
   <p>
-    Titulo: 
+    Titulo:
     <%= @post.title %><br>
     Texto:
     <%= @post.body %> <br>
-    Tag:<br>
-    <%= @post.tag %><br>
+    <% if @post.tag %>
+      Tag:
+      <%= @post.tag %><br>
+    <% end %>
   </p>
+
+  <div>
+    <form action="/show" method="GET">
+      <input type="submit" value="Ver Posts">
+    </form>
+  </div>

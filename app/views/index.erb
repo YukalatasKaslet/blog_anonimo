@@ -1,5 +1,6 @@
   <h1>Blog Anónimo</h1>
 
+ 
     <form action="/post" method="POST" >
       Título:<br>
       <input name="post[title]" type="text"><br>
@@ -9,5 +10,9 @@
       <input name="post[tag]" type="tag"><br>
       <input type="submit" value="Crear!">
     </form>
-
+    <div>
+    <form action="/show" method="GET">
+      <input type="submit" value="Ver Posts">
+    </form>
+  </div>
   

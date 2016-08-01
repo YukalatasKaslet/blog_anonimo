@@ -3,18 +3,18 @@
 <% @post.each do |p| %>
   <p>
     Titulo: 
-    <%= p.title %><br>
+    <a href="/post/<%= p.id %>/edit"><%= p.title %></a><br>
     Texto:
     <%= p.body %> </br>
-    Tag:<br>
-    <input name="post[tag]" type="tag"><br>
+    <% if ( p.tag != nil ) && ( p.tag != "" )%>
+      Tag:
+      <%= p.tag %><br>
+    <% end %>
   </p>
 <% end %>
 
-<% if @delete %>
-  <p>
-    <br>
-    <strong>Post eliminado!</strong>
-    <br>
-  <p>
-<% end %>
+  <div>
+    <form action="/" method="GET">
+      <input type="submit" value="Crear Post!">
+    </form>
+  </div>
