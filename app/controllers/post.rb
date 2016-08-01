@@ -1,8 +1,6 @@
 
-
-
 get '/post/:id/edit' do
-  #edit
+  #edit UPDATE
   @post = Post.find(params[:id]) 
   erb :edit
 end
@@ -30,5 +28,14 @@ end
 
 get '/show' do
   @post = Post.all
+  erb :show
+end
+
+#DELETE
+delete '/post/:id' do
+  post = Post.find(params[:id])
+  post.destroy
+  @delete = true 
+
   erb :show
 end

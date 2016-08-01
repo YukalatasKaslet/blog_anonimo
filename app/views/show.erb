@@ -6,5 +6,15 @@
     <%= p.title %><br>
     Texto:
     <%= p.body %> </br>
+    Tag:<br>
+    <input name="post[tag]" type="tag"><br>
   </p>
+<% end %>
+
+<% if @delete %>
+  <p>
+    <br>
+    <strong>Post eliminado!</strong>
+    <br>
+  <p>
 <% end %>
