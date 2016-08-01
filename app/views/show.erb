@@ -1,3 +1,10 @@
-<h1> <%= @post.title %> </h1>
+<h1> Blog Anónimo </h1>
 
-<p> <%= @post.body %> </p>
+<% @post.each do |p| %>
+  <p>
+    Titulo: 
+    <%= p.title %><br>
+    Texto:
+    <%= p.body %> </br>
+  </p>
+<% end %>
