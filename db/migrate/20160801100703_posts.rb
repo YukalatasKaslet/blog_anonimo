@@ -3,7 +3,7 @@ class Posts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string  :title, null: false
       t.string  :body,  null: false
-      t.string  :tag
+      t.string  :tags
     end
   end
 end
