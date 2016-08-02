@@ -23,6 +23,7 @@ end
 post '/post' do
   #create
   @post = Post.create(params[:post])
+  @tags = Tag.create(params[:post]["tags"])
   erb :post
 end
 
