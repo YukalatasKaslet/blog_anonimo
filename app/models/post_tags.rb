@@ -1,4 +1,4 @@
-class PostTag < ActiveRecord::Base
+class PostTags < ActiveRecord::Base
   # Remember to create a migration!
   #Para la tabla intermedia
   belongs_to :post
