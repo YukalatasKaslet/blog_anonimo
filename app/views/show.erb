@@ -6,10 +6,13 @@
     <a href="/post/<%= p.id %>/edit"><%= p.title %></a><br>
     Texto:
     <%= p.body %> </br>
-    <% if ( p.tag != nil ) && ( p.tag != "" )%>
-      Tag:
-      <%= p.tag %><br>
-    <% end %>
+    
+    Tag:
+    <ul>
+      <% p.tags.each do |t| %>
+        <li><a href="/tag/<%t.id%>"><%= t.tag %></li><br>
+      <% end %>
+    </ul>
   </p>
 <% end %>
 

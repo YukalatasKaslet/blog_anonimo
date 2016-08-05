@@ -1,0 +1,8 @@
+<h1> Blog Anónimo </h1>
+<p>
+  <ul>
+    <% @tag.post do |p| %>
+      Post:<li><a href="/post/<%p.id%>"<% p.title %></li><br>
+    <% end %>
+  </ul>
+</p>

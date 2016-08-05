@@ -1,0 +1,14 @@
+<h1> Blog Anónimo </h1>
+
+<% @tags.each do |t| %>
+  <p>
+    Tag<% t.id %>: <% t.tag %>
+    
+  </p>
+<% end %>
+
+  <div>
+    <form action="/" method="GET">
+      <input type="submit" value="Crear Post!">
+    </form>
+  </div>
