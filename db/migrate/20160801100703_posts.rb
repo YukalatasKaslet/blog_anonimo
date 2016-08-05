@@ -3,16 +3,18 @@ class Posts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string  :title, null: false
       t.string  :body,  null: false
-      t.string  :tags
+      #t.string  :tags
     end
 
     create_table :tags do |t|
-      t.string  :tags
+      t.string  :tag
     end
 
-    create_table :posts_tags do |t|
-      t.belongs_to :post, index: true
-      t.string  :tags,     index: true
+    create_table :post_tags do |t|
+      t.belongs_to  :post,     index: true
+      t.string      :tags,     index: true
+      t.integer     :tag_id
+      t.integer     :post_id
     end
 
   end
