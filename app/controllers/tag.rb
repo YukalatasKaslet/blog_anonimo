@@ -5,12 +5,7 @@ get '/tags' do
 end
 
 #Read
-get '/tag/:id' do
-  tag = Tag.find(params[:id])  
-  redirect to ("/tag/#{tag.id}")
-end
-#Read
-post '/tag/:id' do
-  @tag = Tag.find(params[:id])
+get '/tag/:tag' do
+  @tag = Tag.find(params[:tag])
   erb :tag
 end

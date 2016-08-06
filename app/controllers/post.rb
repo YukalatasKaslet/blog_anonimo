@@ -10,25 +10,26 @@ post '/post' do
   tags = tags.split(/[^a-zA-Z0-9]/)
   tags = tags.delete_if{|element| element == ""}
 
+  t = Tag.all
+
   post.save
     tags.each do |tag|
-      post.tags << Tag.create(tag: tag)
+        post.tags << Tag.find_or_create_by(tag: tag)
     end
-  
-  redirect to ("/post/#{post.id}")
+  p "*" * 50
+  redirect to ("/post/#{post.id}") #esto hace un POST?
 end
 
 #READ
-get '/post/:id' do
-  post = Post.find(params[:id])  
-  redirect to ("/post/#{post.id}") 
-end
-
-#READ
-post '/post/:id' do
+get '/post/:id' do  
   @post = Post.find(params[:id])
-  erb :post
+  erb :post 
 end
+
+#READ
+#post '/post/:id' do
+#  redirect to ("/post/#{params[:id]}")
+#end
 
 #UPDATE
 put '/post/:id' do
